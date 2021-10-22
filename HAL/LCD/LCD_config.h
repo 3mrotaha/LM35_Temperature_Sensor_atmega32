@@ -12,14 +12,14 @@
 #define LCD_MODE		EIGHT_BIT
 #define LCD_LINE_WIDTH	16
 /*			Control Pins	*/
-#define RS_PORT		DIO_u8PORTA
-#define RS_PIN		DIO_u8PIN2
+#define RS_PORT		DIO_u8PORTB
+#define RS_PIN		DIO_u8PIN3
 
-#define RW_PORT		DIO_u8PORTA
-#define RW_PIN		DIO_u8PIN5
+#define RW_PORT		DIO_u8PORTB
+#define RW_PIN		DIO_u8PIN4
 
-#define EN_PORT		DIO_u8PORTA
-#define EN_PIN		DIO_u8PIN7
+#define EN_PORT		DIO_u8PORTB
+#define EN_PIN		DIO_u8PIN6
 
 /*			Data Pins		*/
 #define D7_PORT		DIO_u8PORTB

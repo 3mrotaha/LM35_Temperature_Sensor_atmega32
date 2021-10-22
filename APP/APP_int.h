@@ -8,10 +8,8 @@
 #ifndef APP_APP_INT_H_
 #define APP_APP_INT_H_
 
-ES_t LM35_enuInit(void);
+ES_t APP_enuInit(void);
 
-ES_t LM35_enuReadSignal(u16 *Copy_u16ADCSignal);
-
-ES_t LM35_enuGetTempValue(u16 Copy_u16ADCSignal);
+ES_t APP_enuGetTemperature(s16 Copy_FirstVal, s16 Copy_SecondVal);
 
 #endif /* APP_APP_INT_H_ */

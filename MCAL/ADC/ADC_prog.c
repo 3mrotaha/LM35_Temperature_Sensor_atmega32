@@ -103,7 +103,7 @@ ES_t ADC_enuADCDisable(void){
 
 ES_t ADC_enuSelectChannel(ADC_Channel Copy_ADCChannel){
 	ES_t Local_enuErrorState = ES_NOK;
-
+	ADMUX &= 0b11100000;
 	ADMUX |= Copy_ADCChannel;
 
 	return Local_enuErrorState = ES_OK;
@@ -128,7 +128,7 @@ ES_t ADC_enuWaitOnFlag(void){
 	return Local_enuErrorState  = ES_OK;
 }
 
-ES_t ADC_enuReadADCValue(volatile u16* Copy_u16ADCValue){
+ES_t ADC_enuReadADCValue(volatile s16* Copy_u16ADCValue){
 
 	ES_t Local_enuErrorState = ES_NOK;
 	if(Copy_u16ADCValue != NULL){

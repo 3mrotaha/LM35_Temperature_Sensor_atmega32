@@ -26,7 +26,7 @@ ES_t ADC_enuStartConversion(void);
 ES_t ADC_enuWaitOnFlag(void);
 
 
-ES_t ADC_enuReadADCValue(volatile u16* Copy_u16ADCValue);
+ES_t ADC_enuReadADCValue(volatile s16* Copy_u16ADCValue);
 
 ES_t ADC_enuEnableAutoTrigger(void);
 

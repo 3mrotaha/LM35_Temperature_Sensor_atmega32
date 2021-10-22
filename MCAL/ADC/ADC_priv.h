@@ -15,8 +15,8 @@
 
 #define ADLAR_BIT					5
 
-#define AVCC						0
-#define AREF						1
+#define AVCC						1
+#define AREF						0
 #define INTERNAL_AREF				3
 
 #define REFS_BITS					6
@@ -37,7 +37,7 @@
 #define PRE_ONE_TWENTY_EIGHT		7
 
 /* ADCH and ADCL Register for the Adjustment Detected By ADLAR in ADMUX */
-#define ADC_DATA_REGISTER 	*((volatile u16*) 0x24)
+#define ADC_DATA_REGISTER 	*((volatile s16*) 0x24)
 
 /* Special FunctionIO Register */
 #define SFIOR 				*((volatile u8*) 0x50)

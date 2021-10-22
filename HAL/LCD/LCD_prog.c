@@ -101,18 +101,25 @@ ES_t LCD_enuDisplayIntegerNum(s32 Copy_s32Num)
 
 ES_t LCD_DisplayFloatNumber(f32 Copy_f32Number){
 	ES_t Local_enuErrorState = ES_NOK;
+
+
 	s32 Local_s32IntPart =  (s32) Copy_f32Number;
-	f32 Local_f32FractPart = (Copy_f32Number - Local_s32IntPart);
+	f32 Local_f32FractPart;
+	if(Copy_f32Number >= 0)
+		Local_f32FractPart = (Copy_f32Number - Local_s32IntPart);
+	else
+		Local_f32FractPart = ((Copy_f32Number * -1) - Local_s32IntPart);
 
 	LCD_VoidDisplayAnyNumber(Local_s32IntPart);
-	LCD_vidLatch('.');
+	if(Copy_f32Number - (s32) Copy_f32Number != 0){
+		LCD_vidLatch('.');
+	}
 	u8 Local_u8FractDigits = LCD_u8ReturnNumOfDigits(Local_f32FractPart);
 	for(u8 Local_u8Iterator = 0; Local_u8Iterator < Local_u8FractDigits; Local_u8Iterator++){
 		Local_f32FractPart -= (s32) Local_f32FractPart;
 		Local_f32FractPart *= 10;
 		LCD_VoidDisplayAnyNumber((s32) Local_f32FractPart);
 	}
-
 
 	return Local_enuErrorState = ES_OK;
 }
